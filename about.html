@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="About the team behind the Reel House website">
+<title>About us | Reel House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<input type="checkbox" id="dark" class="sr" aria-label="Dark mode">
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html">Reel House</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+      <div class="nav-right">
+        <label class="toggle" for="dark" title="Switch dark mode"><span class="sr">Toggle dark mode</span></label>
+        <a class="btn" href="index.html#contact">Book a free call</a>
+      </div>
+    </nav>
+
+    <div class="about1">
+      <h1>The team behind the reel.</h1>
+      <p>We are a student group who designed and built this website. Here is who we are and what each of us did.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="group">
+    <div class="wrap about-grid">
+      <div>
+        <h2>Group Information</h2>
+        <ul class="info">
+          <li>Group name: <strong>The Axis</strong></li>
+          <li>Class
+            <ul>
+              <li>Day: Thursday</li>
+              <li>Time: 7:00 AM - 10:00 AM – [End time]</li>
+            </ul>
+          </li>
+          <li>Tutor: <strong>Trung Doan</strong></li>
+          <li>Course: <strong>2026-HX09-COS10026-Web Technology Project (Swinburne Vietnam)</strong></li>
+          <li>Student IDs
+            <ul>
+              <li>Tat Thanh Nguyen: [Student ID]</li>
+              <li>Quang Hung Phat Tran: [Student ID]</li>
+              <li>Huynh Nhat An Nguyen: [Student ID]</li>
+              <li>Nguyen The Son Pham: SWS01870</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <figure class="group-photo">
+        <img src="images/group.jpg" alt="Photo of The Axis group members" width="480" height="360">
+        <figcaption>The Axis team, 2026</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="services" id="contributions">
+    <div class="wrap">
+      <h2>Who did what</h2>
+      <p class="lead">Each member owned one part of the site and reviewed the others.</p>
+      <dl class="roles">
+        <dt>Tat Thanh Nguyen</dt>
+        <dd>Home page layout, hero and work section, shared stylesheet.</dd>
+        <dt>???</dt>
+        <dd>Jobs page: job descriptions, lists and aside.</dd>
+        <dt>???</dt>
+        <dd>Apply page: form fields, input patterns and validation.</dd>
+        <dt>Nguyen The Son Pham</dt>
+        <dd>About page, testing in different browsers and final review.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="interests">
+    <div class="wrap">
+      <h2>What we are into</h2>
+      <p class="lead">A few things about us outside class.</p>
+      <div class="table-wrap">
+        <table class="interests">
+          <caption>Members' interests</caption>
+          <thead>
+            <tr>
+              <th scope="col">Member</th>
+              <th scope="col">Hometown</th>
+              <th scope="col">Programming background</th>
+              <th scope="col" colspan="2">Favourite books, music and films</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Tat Thanh Nguyen</th>
+              <td>Hai Phong</td>
+              <td>[e.g. Python, some HTML]</td>
+              <td>[Book]</td>
+              <td>[Music or film]</td>
+            </tr>
+            <tr>
+              <th scope="row">Nguyen The Son Pham</th>
+              <td>Ba Ria - Vung Tau</td>
+              <td>[e.g. Python, some HTML]</td>
+              <td>Harry Potter</td>
+              <td>The Odyssey</td>
+            </tr>
+            <tr>
+              <th scope="row">Quang Hung Phat Tran</th>
+              <td rowspan="2">Ho Chi Minh</td>
+              <td>[e.g. Python, some HTML]</td>
+              <td>[Book]</td>
+              <td>[Music or film]</td>
+            </tr>
+            <tr>
+              <th scope="row">Huynh Nhat An Nguyen</th>
+              <td>[e.g. Python, some HTML]</td>
+              <td>[Book]</td>
+              <td>[Music or film]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="email">
+    <div class="wrap">
+      <h2>Get in touch with us</h2>
+      <ul class="emails">
+        <li><a href="mailto:member1@student.example">[Member 1]</a></li>
+        <li><a href="mailto:member2@student.example">[Member 2]</a></li>
+        <li><a href="mailto:member3@student.example">[Member 3]</a></li>
+        <li><a href="mailto:member4@student.example">[Member 4]</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Reel House Media</span>
+    <span>hello@reelhouse.example · Ho Chi Minh City</span>
+  </div>
+</footer>
+
+</body>
+</html>
