@@ -1,0 +1,267 @@
+:root {
+  --bg: #d9f0ff;        
+  --card: #ffffff;
+  --accent: #ff6b35;      
+  --accent-dark: #e0501b;
+  --accent-2: #7b2ff7;    
+  --text: #1f2a44;
+  --border: #9fd3f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 16px 40px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  max-width: 760px;
+  margin: 24px 0;
+  padding: 24px 16px 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border-radius: 16px;
+  border: 3px solid var(--text);
+  box-shadow: 6px 6px 0 var(--text);
+}
+
+header h1 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 2px solid rgba(255, 255, 255, 0.6);   /* line under title */
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 16px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: #fff;
+  color: var(--accent-dark);
+}
+
+main {
+  width: 100%;
+  max-width: 760px;
+  background: var(--card);
+  padding: 28px;
+  border: 3px solid var(--text);
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+main h1,
+main h2,
+main h3 {
+  color: var(--accent-2);
+  margin-top: 0;
+}
+
+main h2 {
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+main section,
+main article {
+  margin: 20px 0;
+  padding: 16px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: #f4fbff;
+}
+
+main ul,
+main ol {
+  display: inline-block;
+  text-align: left;
+}
+
+main table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+main th,
+main td {
+  border: 2px solid var(--border);
+  padding: 8px 12px;
+}
+
+main th {
+  background: var(--accent-2);
+  color: #fff;
+}
+
+a {
+  color: var(--accent-2);
+}
+
+/* ===== Form ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+form p {
+  width: 100%;
+  max-width: 420px;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+}
+
+textarea {
+  text-align: left;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+}
+
+/* Highlight bad input after the user has typed something */
+input:invalid:not(:placeholder-shown),
+select:invalid:not([value=""]):focus {
+  border-color: #d62828;
+}
+
+fieldset {
+  width: 100%;
+  max-width: 420px;
+  margin: 12px 0;
+  padding: 12px 16px 16px;
+  border: 2px solid var(--accent-2);
+  border-radius: 12px;
+  background: #f4fbff;
+}
+
+legend {
+  padding: 2px 14px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent-2);
+  border-radius: 999px;
+}
+
+fieldset label {
+  display: inline-block;
+  margin: 0 10px 0 4px;
+  font-weight: 500;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 28px;
+  margin: 8px 6px 0;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 3px solid var(--text);
+  transition: transform 0.1s, background 0.2s;
+}
+
+input[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+}
+
+input[type="submit"]:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+input[type="reset"] {
+  background: #fff;
+  color: var(--text);
+}
+
+input[type="reset"]:hover {
+  background: var(--bg);
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 16px;
+  }
+}
+
+header {
+  background: linear-gradient(135deg, #ff6b35, #7b2ff7);
+  animation: hue-cycle 6s linear infinite;
+}
+
+@keyframes hue-cycle {
+  from { filter: hue-rotate(0deg); }
+  to   { filter: hue-rotate(360deg); }
+}
+
