@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reel House | Digital media agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reelhouse.css">
+<script src="reelhouse-search.js" defer></script>
+</head>
+<body>
+<input type="checkbox" id="dark" class="sr" aria-label="Dark mode">
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#">Reel House</a>
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="apply.html">About</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <label class="toggle" for="dark" title="Switch dark mode"><span class="sr">Toggle dark mode</span></label>
+        <a class="btn" href="#contact">Book a free call</a>
+      </div>
+    </nav>
+
+    <form class="search" role="search" action="index.html">
+      <label class="sr" for="site-search">Search the site</label>
+      <input type="search" id="site-search" name="q" placeholder="Search work, pricing, jobs..." list="search-list" autocomplete="off">
+      <datalist id="search-list"></datalist>
+      <button class="btn" type="submit">Search</button>
+      <span class="search-msg" role="status" aria-live="polite"></span>
+    </form>
+
+    <div class="hero">
+      <div>
+        <h1>Content people finish watching.</h1>
+        <p>We plan, shoot, edit and promote short video and social campaigns for brands in Vietnam and across Southeast Asia.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Start a project</a>
+          <a class="text" href="#work">See our work</a>
+        </div>
+      </div>
+      <div class="phone" aria-label="Example campaign result">
+        <div class="bars"><i></i><i></i><i></i></div>
+        <div class="who">Cà Phê Nhà · TikTok launch</div>
+        <div class="big">+312%</div>
+        <div class="cap">Video views in 60 days</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div>
+    <span>TikTok</span><span>YouTube</span><span>Instagram</span><span>Facebook</span><span>LinkedIn</span><span>Zalo</span>
+    <span>TikTok</span><span>YouTube</span><span>Instagram</span><span>Facebook</span><span>LinkedIn</span><span>Zalo</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Recent work, told in stories</h2>
+    <p class="lead">Every project starts with a goal and ends with a number. Here are three.</p>
+    <input type="radio" name="platform" id="p-tt" class="sr" checked aria-label="TikTok">
+    <input type="radio" name="platform" id="p-ig" class="sr" aria-label="Instagram">
+    <input type="radio" name="platform" id="p-yt" class="sr" aria-label="YouTube">
+    <div class="tabs">
+      <label class="tab" for="p-tt"><span>TikTok</span></label>
+      <label class="tab" for="p-ig"><span>Instagram</span></label>
+      <label class="tab" for="p-yt"><span>YouTube</span></label>
+    </div>
+    <div class="stories set set-tt">
+      <article class="story" tabindex="0">
+        <small>Cà Phê Nhà</small>
+        <div class="stat">+312%</div>
+        <h3>Video views</h3>
+        <p>A 12-part TikTok series following one coffee order from farm to cup.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>Scripted and shot 12 episodes</li>
+          <li>Posted four times a week</li>
+          <li>Replied to every comment in 24 hours</li>
+          </ul>
+        </div>
+      </article>
+      <article class="story" tabindex="0">
+        <small>FitBox Vietnam</small>
+        <div class="stat">4.8x</div>
+        <h3>Return on ad spend</h3>
+        <p>New short-form ad creative tested weekly across Facebook and Instagram.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>Tested 18 ad variations</li>
+          <li>Moved budget to the top three</li>
+          <li>Reported results every Friday</li>
+          </ul>
+        </div>
+      </article>
+      <article class="story" tabindex="0">
+        <small>Saigon Stay Hotels</small>
+        <div class="stat">92k</div>
+        <h3>New followers</h3>
+        <p>A rebranded Instagram feed with Reels shot on location in three cities.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>New grid, colors and captions</li>
+          <li>Reels filmed in three cities</li>
+          <li>Daily story replies and polls</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="stories set set-ig">
+      <article class="story" tabindex="0">
+        <small>Bloom Skincare</small>
+        <div class="stat">+180%</div>
+        <h3>Saves per post</h3>
+        <p>Carousel tutorials that people kept and shared with friends.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>Designed 30 tutorial carousels</li>
+          <li>Wrote captions in Vietnamese and English</li>
+          <li>Tracked saves weekly</li>
+          </ul>
+        </div>
+      </article>
+      <article class="story" tabindex="0">
+        <small>Vespa Saigon Tours</small>
+        <div class="stat">2.1M</div>
+        <h3>Reel plays</h3>
+        <p>Street-food ride-alongs filmed from the passenger seat.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>Filmed 15 Reels in two days</li>
+          <li>Added local-language subtitles</li>
+          <li>Tagged every vendor featured</li>
+          </ul>
+        </div>
+      </article>
+      <article class="story" tabindex="0">
+        <small>Saigon Stay Hotels</small>
+        <div class="stat">92k</div>
+        <h3>New followers</h3>
+        <p>A rebranded feed with Reels shot on location in three cities.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>New grid, colors and captions</li>
+          <li>Reels filmed in three cities</li>
+          <li>Daily story replies and polls</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="stories set set-yt">
+      <article class="story" tabindex="0">
+        <small>TechNest Vietnam</small>
+        <div class="stat">150k</div>
+        <h3>Subscribers in a year</h3>
+        <p>A weekly review series with a format viewers can rely on.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>Set one upload day every week</li>
+          <li>Designed a repeatable thumbnail style</li>
+          <li>Added chapters to every video</li>
+          </ul>
+        </div>
+      </article>
+      <article class="story" tabindex="0">
+        <small>Học Tiếng Anh Nhanh</small>
+        <div class="stat">8:42</div>
+        <h3>Average watch time</h3>
+        <p>Ten-minute lessons edited to remove every slow moment.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>Cut each lesson to the key points</li>
+          <li>Opened with the answer, not an intro</li>
+          <li>Linked the next lesson at the end</li>
+          </ul>
+        </div>
+      </article>
+      <article class="story" tabindex="0">
+        <small>Green Bowl Kitchen</small>
+        <div class="stat">3.4x</div>
+        <h3>Channel traffic</h3>
+        <p>Recipe videos with chapters and a pinned shopping list.</p>
+        <div class="hint">Hover or tap for details</div>
+        <div class="back">
+          <h3>What we did</h3>
+          <ul>
+          <li>Filmed 24 recipes in one week</li>
+          <li>Pinned an ingredient list to each</li>
+          <li>Sent viewers to the online shop</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>What we make</h2>
+    <p class="lead">Pick one service or combine them. Open a row to see what is included.</p>
+    <div class="list">
+      <details open>
+        <summary>Short-form video</summary>
+        <p>Scripts, filming, editing and captions for TikTok, Reels and YouTube Shorts. We deliver a month of content in one shoot day.</p>
+      </details>
+      <details>
+        <summary>Social media management</summary>
+        <p>Content calendar, daily posting, community replies and a monthly report that shows what worked.</p>
+      </details>
+      <details>
+        <summary>Paid ads</summary>
+        <p>Campaign setup, creative testing and budget tuning on Meta, TikTok and Google.</p>
+      </details>
+      <details>
+        <summary>Branding and web design</summary>
+        <p>Logo, colors, tone of voice and a fast website that matches your social content.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <h2>Clear monthly prices</h2>
+    <p class="lead">No hidden fees. Cancel with 30 days' notice.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Starter</h3>
+        <div class="price">$490<small>/month</small></div>
+        <p>For small brands starting on one platform.</p>
+        <ul><li>8 short videos</li><li>1 platform</li><li>Monthly report</li></ul>
+        <a class="btn" href="#contact">Choose Starter</a>
+      </div>
+      <div class="plan pop">
+        <span class="badge">Most popular</span>
+        <h3>Growth</h3>
+        <div class="price">$1,290<small>/month</small></div>
+        <p>For brands ready to post every week.</p>
+        <ul><li>20 short videos</li><li>3 platforms</li><li>Paid ads setup</li><li>Biweekly call</li></ul>
+        <a class="btn" href="#contact">Choose Growth</a>
+      </div>
+      <div class="plan">
+        <h3>Studio</h3>
+        <div class="price">$2,900<small>/month</small></div>
+        <p>A full content team on your side.</p>
+        <ul><li>40 videos and 1 shoot day</li><li>All platforms</li><li>Ads management</li><li>Weekly strategy call</li></ul>
+        <a class="btn" href="#contact">Choose Studio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap grid">
+    <div>
+      <h2>Apply to join the team</h2>
+      <p class="lead" style="color:#dfe4ff">Tell us about yourself and the skills you bring. Use the job reference number from the Jobs page. We reply within one working day.</p>
+    </div>
+    <form id="apply-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+
+      <p>
+        <label for="jobref">Job reference number</label>
+        <input type="text" id="jobref" name="jobref"
+               maxlength="5" pattern="[A-Za-z0-9]{5}"
+               title="Exactly 5 alphanumeric characters" required>
+      </p>
+
+      <p>
+        <label for="firstname">First name</label>
+        <input type="text" id="firstname" name="firstname"
+               maxlength="20" pattern="[A-Za-z]{1,20}"
+               title="Maximum 20 alpha characters (letters only)" required>
+      </p>
+
+      <p>
+        <label for="lastname">Last name</label>
+        <input type="text" id="lastname" name="lastname"
+               maxlength="20" pattern="[A-Za-z]{1,20}"
+               title="Maximum 20 alpha characters (letters only)" required>
+      </p>
+
+      <p>
+        <label for="dob">Date of birth</label>
+        <input type="text" id="dob" name="dob"
+               placeholder="dd/mm/yyyy" maxlength="10"
+               pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
+               title="Use the format dd/mm/yyyy" required>
+      </p>
+
+      <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </fieldset>
+
+      <p>
+        <label for="street">Street address</label>
+        <input type="text" id="street" name="street" maxlength="40" required>
+      </p>
+
+      <p>
+        <label for="suburb">Suburb/Town</label>
+        <input type="text" id="suburb" name="suburb" maxlength="40" required>
+      </p>
+
+      <p>
+        <label for="state">State</label>
+        <select id="state" name="state" required>
+          <option value="">Please select</option>
+          <option value="VIC">VIC</option>
+          <option value="NSW">NSW</option>
+          <option value="QLD">QLD</option>
+          <option value="NT">NT</option>
+          <option value="WA">WA</option>
+          <option value="SA">SA</option>
+          <option value="TAS">TAS</option>
+          <option value="ACT">ACT</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="postcode">Postcode</label>
+        <input type="text" id="postcode" name="postcode"
+               maxlength="4" pattern="[0-9]{4}" inputmode="numeric"
+               title="Exactly 4 digits" required>
+      </p>
+
+      <p>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </p>
+
+      <p>
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone"
+               maxlength="12" pattern="[0-9]{8,12}"
+               title="8 to 12 digits" required>
+      </p>
+
+      <fieldset>
+        <legend>Skill list</legend>
+        <input type="checkbox" id="html" name="skills[]" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="skills[]" value="CSS">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="javascript" name="skills[]" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+
+        <input type="checkbox" id="sql" name="skills[]" value="SQL">
+        <label for="sql">SQL</label>
+      </fieldset>
+
+      <p>
+        <label for="otherskills">Other skills</label><br>
+        <textarea id="otherskills" name="otherskills" rows="5" cols="40"></textarea>
+      </p>
+
+      <p class="actions">
+        <input class="btn" type="submit" value="Apply">
+        <input class="btn btn-ghost" type="reset" value="Reset">
+      </p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>COS10011/COS60004/COS60007 CWA</p>
+    <p>&#169; Swinburne University of Technology</p>
+    <p>Group Lap - Task 1</p>
+  </div>
+</footer>
+
+<a class="btn sticky-cta" href="#contact">Book a free call</a>
+
+</body>
+</html>
