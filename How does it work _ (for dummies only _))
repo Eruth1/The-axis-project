@@ -1,0 +1,66 @@
+1. Design tokens (:root)
+All colors and fonts are CSS variables at the top.
+• Brand palette: --blue, --ink, --paper, --sun (yellow), --pink, --mint.
+• Theme variables: --bg, --fg, --edge (borders and shadows), --muted, --field (inputs and cards), --panel (dark sections). Dark mode swaps only these.
+• Fonts: --display (Bricolage Grotesque) for headings and --body (DM Sans) for text.
+To rebrand, change these values first. Note that the file names the fonts but doesn't load them, so your HTML needs a Google Fonts <link>, or they fall back to Arial Black and system-ui.
+2. Global base
+• A reset (box-sizing, zero margins) and smooth scrolling.
+• body uses the theme variables, with a 0.3s transition so theme changes fade.
+• :focus-visible gives every focusable element a yellow outline for keyboard users.
+• .wrap is the centered 1160px content container. Put it inside every section.
+3. Header, nav, and button
+• header is the blue band. nav is a flex row with .logo on the left and ul links on the right.
+• .btn is the signature button: a yellow pill with a thick border and a hard offset shadow. On hover it shifts 2px and the shadow shrinks, so it looks pressed. Reuse it on any <a> or <button>.
+4. Dark mode switch
+This is the CSS-only trick.
+1. A hidden checkbox, <input type="checkbox" id="dark" class="sr">. .sr hides it visually but keeps it accessible.
+2. A <label for="dark" class="toggle"> is the visible switch. Its ::before is the sliding knob.
+3. body:has(#dark:checked) redefines the theme variables to dark values. Everything using the variables recolors automatically.
+4. The knob slides 26px and turns white when checked. A focus ring appears when the hidden checkbox is keyboard-focused.
+.nav-right groups the switch and the nav button. Requires a browser with :has() support (all modern browsers).
+5. Scroll progress bar
+.progress is a fixed 5px yellow bar at the top, scaled to 0 width. Inside @supports (animation-timeline: scroll()), it animates to full width tied to page scroll (animation-timeline: scroll(root)). In browsers without support, it simply stays hidden at zero width. Add <div class="progress"></div> once.
+6. Hero and animated phone
+• .hero is a two-column grid (text and phone) with h1 using fluid clamp() sizing. Hero text assumes it sits on the blue background (light text colors).
+• .phone is a pink, tilted mock phone. Inside, .bars holds three <i> elements, the "story progress" bars.
+• Each bar's ::after fills over 9s on an infinite loop, with delays of 0s, 3s, and 6s so they fill one after another. Inside the phone, .who, .big, and .cap style the name, big number, and caption.
+7. Marquee strip
+.strip is the yellow scrolling band. Its inner div animates translateX(-50%) for 28s on a loop. The trick: put the list of <span>s in that div twice (duplicated), so when it has moved half its width, the loop restarts without a visible jump.
+8. Sections and headings
+section has 96px vertical padding. h2 uses the display font and max-width:18ch for tight line wraps. .lead is a muted intro paragraph.
+9. Work: platform tabs and story cards
+Tabs (radio buttons, no JS):
+• Three radios (#p-tt, #p-ig, #p-yt: TikTok, Instagram, YouTube) must come before .tabs and the content sets, as siblings in the same parent.
+• .tabs holds <label class="tab" for="p-tt"><span>TikTok</span></label> and so on. The span is the pill. The checked one is filled with --fg.
+• Each .set (.set-tt, .set-ig, .set-yt) is display:none until its radio is checked, when it becomes display:grid. Give each set the stories class too so it gets the 3-column layout. Cards fade up with the swap animation.
+Story cards (.story):
+• Tall 9:14 cards with hard shadows. The first three get mint, yellow, and pink backgrounds. .stat is the huge number.
+• .back is a dark panel hidden below the card (translateY(101%)). On hover, :focus-within, or :focus it slides up to reveal a bullet list. Give cards tabindex="0" so keyboard users can trigger it.
+• .hint is a small "hover for details" label.
+10. Services accordion
+Uses native <details>/<summary>. The default marker is removed and replaced with a + that rotates 45° into a × when open. The section uses .services (the dark --panel background). Wrap the items in .list.
+11. Contact form
+.contact is blue, with .grid splitting copy and form into two columns. form is a card that uses theme variables, so it adapts to dark mode. Inputs, selects, and textareas inherit the font and get rounded borders. Labels wrap their fields (label is a grid with a 6px gap).
+12. Pricing
+• .plans is a 3-column grid of .plan cards. Check-mark bullets are drawn with CSS (a rotated bordered box in li::before), so no icons are needed.
+• Add .pop to the featured plan: yellow background, lifted 14px. .badge is a pink "Most popular" tag pinned to its top-right corner.
+• .price is the big number, and <small> inside it is the "/month" text. The .btn is pushed to the bottom with margin-top:auto.
+13. About page
+• .about1 is the hero variant, and .about-grid is a two-column layout.
+• .group-photo is a tilted framed photo (figure with img and figcaption), 4:3 cropped.
+• .info is a styled list (nested lists get bullets). .roles styles a <dl>: dt is a yellow role title and dd the description.
+• .table-wrap plus .interests make a bordered, horizontally scrollable table (minimum 640px). Cells with rowspan get a mint background.
+• .emails is a row of pill-shaped mailto links. nav ul a[aria-current=page] underlines the current page link.
+14. Responsive behavior (≤860px)
+• Hero, contact, stories, pricing, and about grids become single columns.
+• The desktop nav links are hidden, and .sticky-cta (hidden on desktop) appears as a fixed full-width button at the bottom, respecting the iPhone safe area. The footer gets extra bottom padding so the button doesn't cover it.
+• Story cards drop their fixed ratio. Their .back panels become permanently visible (no hover on touch), and .hint is hidden.
+• The featured plan and group photo lose their tilt or lift.
+15. Accessibility
+prefers-reduced-motion turns off the phone bars, marquee, and tab-swap animations (the bars display full). Visible focus rings and native details and radio controls keep keyboard use working.
+16. Things to watch
+• Missing pieces: fonts aren't loaded by this file, and the HTML must include .progress, .sticky-cta, the #dark checkbox, and the three radios in the right order.
+• Hard-coded colors: some values (#14163a, #dfe4ff, #3a3e85) bypass the variables, so changing --ink won't update them all.
+• Three @media (max-width:860px) blocks exist (one in the middle of the file, one after Pricing, one after About). They work together, but keep them in mind when editing breakpoints.
+• Tab sets must share a parent with their radios, or the ~ selector won't match.

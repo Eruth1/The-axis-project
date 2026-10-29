@@ -31,7 +31,13 @@
         <a class="btn" href="#contact">Book a free call</a>
       </div>
     </nav>
-
+  <form class="search" role="search" action="index.html">
+    <label class="sr" for="site-search">Search the site</label>
+    <input type="search" id="site-search" name="q" placeholder="Search work, pricing, jobs..." list="search-list" autocomplete="off">
+    <datalist id="search-list"></datalist>
+    <button class="btn" type="submit">Search</button>
+    <span class="search-msg" role="status" aria-live="polite"></span>
+    </form>
     <div class="hero">
       <div>
         <h1>Content people finish watching.</h1>

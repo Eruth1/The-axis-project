@@ -277,3 +277,14 @@ body:has(#dark:checked) .duties li::marker{color:var(--sun)}
   .facts,.reqs{grid-template-columns:1fr}
   .jobs-main section.job{padding:24px}
 }
+
+/* ===== Team photo as a music button ===== */
+.photo-btn{display:block;position:relative;width:100%;padding:0;border:0;background:none;border-radius:16px;cursor:pointer;font:inherit;color:inherit}
+.photo-btn img{transition:filter .2s}
+.photo-btn:hover img{filter:brightness(.85)}
+.play-icon{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:var(--sun);border:3px solid #14163a;box-shadow:4px 4px 0 #14163a}
+.play-icon::before{content:"";position:absolute;left:30px;top:20px;border-style:solid;border-width:15px 0 15px 24px;border-color:transparent transparent transparent #14163a}
+.photo-btn.is-playing .play-icon::before{left:24px;top:22px;width:10px;height:28px;border:0;background:#14163a;box-shadow:18px 0 0 #14163a}
+.photo-btn.is-playing .play-icon{animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.photo-btn.is-playing .play-icon{animation:none}}
