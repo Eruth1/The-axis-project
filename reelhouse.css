@@ -277,33 +277,3 @@ body:has(#dark:checked) .duties li::marker{color:var(--sun)}
   .facts,.reqs{grid-template-columns:1fr}
   .jobs-main section.job{padding:24px}
 }
-
-form.search{
-  --page-1-title:"Home";                          --page-1-url:"index.html";
-  --page-2-title:"Work: recent stories";          --page-2-url:"index.html#work";
-  --page-3-title:"Services";                      --page-3-url:"index.html#services";
-  --page-4-title:"Pricing";                       --page-4-url:"index.html#pricing";
-  --page-5-title:"Apply to join the team (form)"; --page-5-url:"index.html#contact";
-  --page-6-title:"About us: The Axis team";       --page-6-url:"apply.html";
-  --page-7-title:"Jobs";                          --page-7-url:"jobs.html";
-  --page-8-title:"Contact";                       --page-8-url:"contact.html";
-}
- 
-form.search input[type=search]{text-transform:lowercase}
-form.search input[type=search]::placeholder{text-transform:none}
- 
-/* datalist */
-form.search datalist{display:none}
- 
-/* hide message while typing/focused */
-form.search input[type=search]:focus ~ .search-msg:empty{display:none}
- 
-/* Empty query message: "Type something to search." */
-form.search:has(input[type=search]:placeholder-shown:user-invalid) .search-msg:empty{display:block}
-form.search:has(input[type=search]:placeholder-shown:user-invalid) .search-msg:empty::before{content:"Type something to search."}
- 
-/* No-results message styling */
-.search-msg:not(:empty){display:block;color:#ffe9a6}
- 
-/* Visible keyboard focus for the search field */
-form.search input[type=search]:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
