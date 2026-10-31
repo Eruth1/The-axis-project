@@ -8,7 +8,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="reelhouse.css">
+<link rel="stylesheet" href="styles.css">
+<!-- Embedded CSS: styles used only on the About page -->
+<style>
+  /* Centre the caption under the group photo */
+  .group-photo figcaption {
+    text-align: center;
+    font-style: italic;
+  }
+  /* Make the interests table caption stand out */
+  .interests caption {
+    font-weight: 700;
+    padding-bottom: 0.5em;
+  }
+</style>
 </head>
 <body>
 <input type="checkbox" id="dark" class="sr" aria-label="Dark mode">
@@ -101,7 +114,7 @@
   <section class="services" id="contributions">
     <div class="wrap">
       <h2>Behind the scenes</h2>
-      <p class="lead">Each member owned one part of the site and reviewed the others.</p>
+      <p class="lead" style="max-width:60ch">Each member owned one part of the site and reviewed the others.</p>
       <dl class="roles">
         <div class="role"><span class="num" aria-hidden="true">01</span><dt>Tat Thanh Nguyen</dt><dd>Home page layout, hero and work section, shared stylesheet.</dd></div>
         <div class="role"><span class="num" aria-hidden="true">02</span><dt>Quang Hung Phat Tran</dt><dd>Jobs page: job descriptions, lists and aside.</dd></div>
