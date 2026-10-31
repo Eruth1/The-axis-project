@@ -21,6 +21,30 @@
     font-weight: 700;
     padding-bottom: 0.5em;
   }
+  /* Member quotes: Vietnamese original, English translation below */
+  .roles .role dd.quote {
+    padding-top: 12px;
+    font-weight: 700;
+  }
+  /* Numbers 01-04 on member cards, drawn with a CSS counter
+     so the <dl> only contains <dt> and <dd> (valid HTML5) */
+  .roles { counter-reset: member; }
+  .roles .role::before {
+    counter-increment: member;
+    content: "0" counter(member);
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 3.4rem;
+    line-height: .9;
+    letter-spacing: -.02em;
+    margin-bottom: auto;
+    padding-bottom: 28px;
+  }
+  .role .quote .translation {
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -38,6 +62,7 @@
         <li><a href="index.html#pricing">Pricing</a></li>
         <li><a href="about.html" aria-current="page">About</a></li>
         <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="apply.html">Apply</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -62,7 +87,7 @@
           <a class="text" href="#email">Get in touch</a>
         </div>
       </div>
-      <div class="phone" aria-label="Team summary">
+      <div class="phone" role="group" aria-label="Team summary">
         <div class="bars"><i></i><i></i><i></i></div>
         <div class="who">The Axis · Web Technology Project</div>
         <div class="big">4</div>
@@ -89,7 +114,7 @@
           <li>Class
             <ul>
               <li>Day: Thursday</li>
-              <li>Time: 7:00 AM - 10:00 AM – [End time]</li>
+              <li>Time: 7:00 AM - 10:00 AM</li>
             </ul>
           </li>
           <li>Tutor: <strong>Trung Doan</strong></li>
@@ -105,7 +130,7 @@
         </ul>
       </div>
       <figure class="group-photo">
-        <img src="Photo of The Axis Group members.png" alt="Domain Clash" width="480" height="360">
+        <img src="group-photo.jpg" alt="Photo of The Axis group members" width="480" height="263">
         <figcaption>The Axis team, 2026</figcaption>
       </figure>
     </div>
@@ -116,10 +141,14 @@
       <h2>Behind the scenes</h2>
       <p class="lead" style="max-width:60ch">Each member owned one part of the site and reviewed the others.</p>
       <dl class="roles">
-        <div class="role"><span class="num" aria-hidden="true">01</span><dt>Tat Thanh Nguyen</dt><dd>Home page layout, hero and work section, shared stylesheet.</dd></div>
-        <div class="role"><span class="num" aria-hidden="true">02</span><dt>Quang Hung Phat Tran</dt><dd>Jobs page: job descriptions, lists and aside.</dd></div>
-        <div class="role"><span class="num" aria-hidden="true">03</span><dt>Huynh Nhat An Nguyen</dt><dd>Apply page: form fields, input patterns and validation.</dd></div>
-        <div class="role"><span class="num" aria-hidden="true">04</span><dt>Nguyen The Son Pham</dt><dd>About page, testing in different browsers and final review.</dd></div>
+        <div class="role"><dt>Tat Thanh Nguyen</dt><dd>Home page layout, hero and work section, shared stylesheet.</dd>
+          <dd class="quote"><q lang="vi">Có công mài sắt, có ngày nên kim.</q> <span class="translation">"If you keep grinding iron, one day it becomes a needle."</span></dd></div>
+        <div class="role"><dt>Quang Hung Phat Tran</dt><dd>Jobs page: job descriptions, lists and aside.</dd>
+          <dd class="quote"><q lang="vi">Một cây làm chẳng nên non, ba cây chụm lại nên hòn núi cao.</q> <span class="translation">"One tree alone cannot make a hill; three trees together make a high mountain."</span></dd></div>
+        <div class="role"><dt>Huynh Nhat An Nguyen</dt><dd>Apply page: form fields, input patterns and validation.</dd>
+          <dd class="quote"><q lang="vi">Học thầy không tày học bạn.</q> <span class="translation">"Learning from a teacher is not as good as learning from friends."</span></dd></div>
+        <div class="role"><dt>Nguyen The Son Pham</dt><dd>About page, testing in different browsers and final review.</dd>
+          <dd class="quote"><q lang="vi">Thất bại là mẹ thành công.</q> <span class="translation">"Failure is the mother of success."</span></dd></div>
       </dl>
     </div>
   </section>
@@ -143,30 +172,30 @@
             <tr>
               <th scope="row">Tat Thanh Nguyen</th>
               <td>Can Tho</td>
-              <td>[e.g. Python, some HTML]</td>
+              <td>Python, HTML</td>
               <td>call of cthulhu</td>
               <td>neon genesis evangelion</td>
             </tr>
             <tr>
               <th scope="row">Nguyen The Son Pham</th>
               <td>Vung Tau</td>
-              <td>[e.g. Python, some HTML]</td>
+              <td>Python, HTML</td>
               <td>Harry Potter</td>
               <td>The Odyssey</td>
             </tr>
             <tr>
               <th scope="row">Quang Hung Phat Tran</th>
               <td>Ho Chi Minh</td>
-              <td>[e.g. Python, some HTML]</td>
+              <td>Python, HTML</td>
               <td>To Kill a Mockingbird</td>
               <td>12 angry men</td>
             </tr>
             <tr>
               <th scope="row">Huynh Nhat An Nguyen</th>
               <td>Ho Chi Minh</td>
-              <td>[e.g. Python, some HTML]</td>
-              <td>[Book]</td>
-              <td>[Music or film]</td>
+              <td>Python, HTML</td>
+              <td>Nothing</td>
+              <td>Nothing</td>
             </tr>
           </tbody>
         </table>
@@ -191,8 +220,9 @@
   <div class="wrap">
     <p>COS10011/COS60004/COS60007 CWA</p>
     <p>&#169; Swinburne University of Technology</p>
-    <p>Group Lap - Task 1</p>
-    <P>https://github.com/Eruth1/The-axis-project</P>
+    <p>Group Lab - Task 1</p>
+    <p><a href="https://github.com/Eruth1/The-axis-project" target="_blank" rel="noopener">https://github.com/Eruth1/The-axis-project</a></p>
+    <p lang="vi">Ghi nhận sử dụng GenAI: Nguyen The Son Pham đã dùng Claude (Anthropic) để hỗ trợ kiểm tra trang About theo yêu cầu đề bài, check error code, sửa lỗi kiểm tra HTML và gợi ý CSS nhúng.</p>
   </div>
 </footer>
 
