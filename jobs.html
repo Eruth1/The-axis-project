@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
   jobs.html - Job position descriptions (Reel House)
-  Author: [member name]   Course: COS10011/COS60004/COS60007 CWA, Group Lap - Task 1
+  Author: Quang Hung Phat Tran   Course: COS10011/COS60004/COS60007 CWA, Group Lap - Task 1
   Notes:
   - Two job positions (VID24, ADS24); reference numbers are exactly 5 alphanumeric
-    characters so they match the pattern on the application form (contact.html).
+    characters so they match the pattern on the application form (apply.html).
   - Heading levels: h1 (page) > h2 (sections) > h3 (blocks) > h4 (Essential / Preferable).
   - Lists: <ol> for responsibilities and application steps, <ul> for requirements and links.
   - Shared styles are in styles.css (Jobs page block at the end); search is in reelhouse-search.js.
@@ -16,6 +16,10 @@
 <meta name="description" content="Open positions at Reel House: Short-Form Video Editor and Paid Social Specialist in Ho Chi Minh City">
 <title>Jobs | Reel House</title>
 <link rel="stylesheet" href="styles.css">
+<!-- Embedded CSS: rules used only on the Jobs page -->
+<style>
+  .ref strong{letter-spacing:.12em}
+</style>
 <script src="reelhouse-search.js" defer></script>
 </head>
 <body>
@@ -26,30 +30,29 @@
 <header>
   <div class="wrap">
     <nav>
-      <a class="logo" href="index.html">Reel House</a>
+      <a class="logo" href="index.html"><img src="logo.svg" alt="" width="32" height="32">Reel House</a>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#work">Work</a></li>
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#pricing">Pricing</a></li>
-        <li><a href="apply.html">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="jobs.html" aria-current="page">Jobs</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
       </ul>
       <div class="nav-right">
         <label class="toggle" for="dark" title="Switch dark mode"><span class="sr">Toggle dark mode</span></label>
-        <a class="btn" href="contact.html">Apply now</a>
+        <a class="btn" href="apply.html">Apply now</a>
       </div>
     </nav>
 
     <!-- Site search box (handled by reelhouse-search.js) -->
     <form class="search" role="search" action="index.html">
-      <label class="sr" for="site-search">Find on this page</label>
-      <input type="search" id="site-search" name="q" placeholder="Find on this page... (press /)" autocomplete="off">
-      <button class="btn" type="submit">Find</button>
-      <button class="btn find-nav" type="button" id="find-prev" aria-label="Previous match" title="Previous (Shift+Enter)">&#8593;</button>
-      <button class="btn find-nav" type="button" id="find-next" aria-label="Next match" title="Next (Enter)">&#8595;</button>
-      <span class="search-msg" role="status" aria-live="polite"></span>
+    <label class="sr" for="site-search">Search the site</label>
+    <input type="search" id="site-search" name="q" placeholder="Search work, pricing, jobs..." list="search-list" autocomplete="off">
+    <datalist id="search-list"></datalist>
+    <button class="btn" type="submit">Search</button>
+    <span class="search-msg" role="status" aria-live="polite"></span>
     </form>
 
     <!-- Page title and intro -->
@@ -60,9 +63,22 @@
   </div>
 </header>
 
-<!-- Main content: job sections on the left, <aside> with application steps on the right -->
+<!-- Main content: <aside> with application steps floats on the right, job sections flow beside it -->
 <main>
   <div class="wrap jobs-layout">
+
+<!-- Aside: floated right (25% wide). It comes first in the code so the text can wrap beside it. -->
+    <aside class="how" aria-labelledby="how-title">
+      <h2 id="how-title">How to apply</h2>
+      <ol>
+        <li>Choose a role and copy its reference number.</li>
+        <li>Fill in the <a href="apply.html">application form</a>.</li>
+        <li>We reply within five working days.</li>
+        <li>Shortlisted people join a 30-minute video call, then a short task.</li>
+      </ol>
+      <p class="deadline">Applications close <time datetime="2026-11-30">30 November 2026</time>.</p>
+    </aside>
+
 
     <div class="jobs-main">
 
@@ -126,7 +142,7 @@
             </ul>
           </div>
         </div>
-        <a class="btn" href="contact.html">Apply for VID24</a>
+        <a class="btn" href="apply.html">Apply for VID24</a>
       </section>
 
       <!-- Section 3: Job ADS24 - Paid Social Specialist (same structure as VID24) -->
@@ -163,7 +179,22 @@
               <li>Clear written English for client reports</li>
               <li>Comfortable managing monthly budgets</li>
             </ul>
-          </div>
+            <!-- Section 4: commitment to Aboriginal and Torres Strait Islander peoples -->
+      <section class="job inclusion" id="inclusion" aria-labelledby="inclusion-title">
+        <h2 id="inclusion-title">Our commitment to Aboriginal and Torres Strait Islander peoples</h2>
+        <p><strong>Reel House welcomes applications from Aboriginal and Torres Strait Islander peoples</strong> for every role on this page. You are welcome to mention your cultural background in your application, and it is always your choice.</p>
+        <h3>Why this statement is here</h3>
+        <p>This website was built as a project for Swinburne University of Technology, which operates on the lands of the Wurundjeri Woi-wurrung people of the Kulin Nation. Aboriginal and Torres Strait Islander peoples are the First Peoples of Australia and hold some of the oldest living cultures in the world. That is why an Acknowledgement of Country appears in the footer of every page.</p>
+        <h3>What we commit to</h3>
+        <ul>
+          <li>Recruit fairly and welcome First Nations applicants into every role.</li>
+          <li>Treat stories, art and cultural knowledge with respect, and never use them in client work without permission from the people they belong to.</li>
+          <li>Keep learning about reconciliation and the history of the lands where our team works and studies.</li>
+        </ul>
+        <p style="font-style:italic">Reconciliation is ongoing work, and we will keep this statement up to date.</p>
+      </section>
+
+    </div>
           <div>
             <h4>Preferable</h4>
             <ul>
@@ -174,22 +205,10 @@
             </ul>
           </div>
         </div>
-        <a class="btn" href="contact.html">Apply for ADS24</a>
+        <a class="btn" href="apply.html">Apply for ADS24</a>
       </section>
 
     </div>
-
-    <!-- Aside: extra information about how to apply (ordered list) and the closing date -->
-    <aside class="how" aria-labelledby="how-title">
-      <h2 id="how-title">How to apply</h2>
-      <ol>
-        <li>Choose a role and copy its reference number.</li>
-        <li>Fill in the <a href="contact.html">application form</a>.</li>
-        <li>We reply within five working days.</li>
-        <li>Shortlisted people join a 30-minute video call, then a short task.</li>
-      </ol>
-      <p class="deadline">Applications close <time datetime="2026-11-30">30 November 2026</time>.</p>
-    </aside>
 
   </div>
 </main>
@@ -199,7 +218,11 @@
   <div class="wrap">
     <p>COS10011/COS60004/COS60007 CWA</p>
     <p>&#169; Swinburne University of Technology</p>
-    <p>Group Lap - Task 1</p>
+    <p>Group Lab - Task 1</p>
+    <p><a href="https://axis-project.atlassian.net/jira/software/projects/AXIS/boards/1" target="_blank" rel="noopener">Jira project board</a></p>
+    <p><a href="https://github.com/Eruth1/The-axis-project" target="_blank" rel="noopener">https://github.com/Eruth1/The-axis-project</a></p>
+    <p><a href="mailto:thanhntfsc0262@fpt.edu.vn">thanhntfsc0262@fpt.edu.vn</a></p>
+    <p class="acknowledgement">We acknowledge the Traditional Custodians of the lands on which Swinburne University of Technology operates, the Wurundjeri Woi-wurrung people of the Kulin Nation, and pay our respects to Elders past and present. <a href="jobs.html#inclusion">Read our commitment to Aboriginal and Torres Strait Islander peoples</a>.</p>
   </div>
 </footer>
 

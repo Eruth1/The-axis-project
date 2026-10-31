@@ -1,3 +1,4 @@
+/* ===== Design tokens: colours, fonts and dark-mode values ===== */
 :root{
   --blue:#2340e8; --ink:#14163a; --paper:#f6f6fb;
   --sun:#ffd23f; --pink:#ff7aa8; --mint:#7be0c3;
@@ -5,6 +6,7 @@
   --display:"Times New Roman",Times,"Liberation Serif",serif;
   --body:"Times New Roman",Times,"Liberation Serif",serif;
 }
+/* ===== Base reset, page defaults and focus outline (accessibility) ===== */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--body);color:var(--fg);background:var(--bg);line-height:1.6;font-size:18px;transition:background .3s,color .3s}
@@ -42,6 +44,7 @@ body:has(#dark:focus-visible) .toggle{outline:3px solid var(--sun);outline-offse
 .sticky-cta{display:none}
 
 /* Hero */
+/* ===== Hero: headline, buttons and phone mock-up ===== */
 .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding:48px 0 88px}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,7vw,5.6rem);line-height:.98;letter-spacing:-.02em}
 .hero p{max-width:46ch;margin:24px 0 32px;font-size:1.15rem;color:#dfe4ff}
@@ -71,6 +74,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.4rem)
 .lead{max-width:52ch;margin-top:16px;color:var(--muted)}
 
 /* Work: vertical story cards */
+/* ===== Work: story cards that flip on hover or focus ===== */
 .stories{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
 .story{position:relative;overflow:hidden;color:#14163a;aspect-ratio:9/14;border:3px solid var(--edge);border-radius:28px;padding:22px;display:flex;flex-direction:column;box-shadow:8px 8px 0 var(--edge);transition:transform .2s}
 .story:hover{transform:translateY(-6px)}
@@ -95,6 +99,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.4rem)
 .services .lead{color:#b9bdf0}
 .list{margin-top:44px;border-top:2px solid #3a3e85}
 details{border-bottom:2px solid #3a3e85}
+/* ===== Services: open-and-close rows (details/summary) ===== */
 summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);letter-spacing:-.02em}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-size:2rem;color:var(--sun);transition:transform .2s}
@@ -109,9 +114,11 @@ label{font-weight:700;font-size:.95rem;display:grid;gap:6px}
 input,select,textarea{font:inherit;padding:12px 14px;border:2px solid var(--edge);border-radius:12px;background:var(--field);color:var(--fg)}
 textarea{min-height:110px;resize:vertical}
 
+/* ===== Footer ===== */
 footer{background:var(--ink);color:#b9bdf0;padding:32px 0;font-size:.95rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
+/* ===== Responsive layout for tablets and phones ===== */
 @media (max-width:860px){
   .hero,.contact .grid{grid-template-columns:1fr}
   .stories{grid-template-columns:1fr}
@@ -145,6 +152,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .set .story{animation:swap .35s ease both}
 
 /* ===== Pricing ===== */
+/* ===== Pricing: three plan cards ===== */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px;align-items:stretch}
 .plan{background:var(--field);color:var(--fg);border:3px solid var(--edge);border-radius:28px;padding:30px;box-shadow:8px 8px 0 var(--edge);display:flex;flex-direction:column;position:relative}
 .plan.pop{background:var(--sun);color:#14163a;border-color:#14163a;box-shadow:8px 8px 0 #14163a;transform:translateY(-14px)}
@@ -241,7 +249,9 @@ form.search .btn:hover{box-shadow:1px 1px 0 var(--ink)}
 .search-msg:empty{display:none}
 
 /* ===== Jobs page ===== */
-.jobs-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start;padding-top:72px;padding-bottom:96px}
+/* Jobs layout: the aside floats right, the job sections flow beside it */
+.jobs-layout{display:block;padding-top:72px;padding-bottom:96px}
+.jobs-layout::after{content:"";display:block;clear:both}
 .jobs-main{display:grid;gap:40px}
 .jobs-main #openings{padding:0}
 .jobs-main section.job{padding:32px}
@@ -266,14 +276,15 @@ body:has(#dark:checked) .duties li::marker{color:var(--sun)}
 .reqs li{padding-left:24px;position:relative}
 .reqs li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--mint);border:2px solid var(--edge)}
 .reqs div:last-child li::before{background:var(--sun)}
-.how{position:sticky;top:24px;background:var(--sun);color:#14163a;border:3px solid #14163a;border-radius:28px;box-shadow:8px 8px 0 #14163a;padding:28px}
+.how{float:right;width:25%;margin:0 0 32px 40px;background:var(--sun);color:#14163a;border:3px solid #14163a;border-radius:28px;box-shadow:8px 8px 0 #14163a;padding:24px}
 .how h2{font-size:1.8rem;max-width:none}
 .how ol{margin:16px 0 0 22px;display:grid;gap:10px}
 .how li::marker{font-weight:800}
 .how .deadline{margin-top:18px;padding-top:14px;border-top:2px solid #14163a;font-weight:700}
+@media (max-width:960px){.how{float:none;width:auto;margin:0 0 32px}}
 @media (max-width:860px){
   .jobs-layout{grid-template-columns:1fr;padding-top:56px;padding-bottom:72px}
-  .how{position:static}
+  .how{float:none;width:auto;margin:0 0 32px}
   .facts,.reqs{grid-template-columns:1fr}
   .jobs-main section.job{padding:24px}
 }
@@ -299,3 +310,40 @@ form.search.find-active{position:fixed;top:12px;right:12px;left:auto;z-index:80;
 /* ===== Contact page: pull the form up under the title ===== */
 header:has(+ main > .contact:first-child) .about1{padding-bottom:28px}
 main > .contact:first-child{padding-top:16px;padding-bottom:72px}
+
+
+/* ===== Shared: logo image in the navigation ===== */
+.logo img{vertical-align:middle;margin-right:8px}
+
+/* ===== Home page: background graphic made only with CSS (dots plus a glowing circle) ===== */
+.home header{
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 90% 85%, rgba(255,210,63,.35) 0 110px, transparent 111px);
+  background-size:36px 36px, auto;
+  background-repeat:repeat, no-repeat;
+}
+
+/* ===== Footer: links and Acknowledgement of Country ===== */
+footer a{text-decoration:underline;text-underline-offset:3px}
+footer a:hover{color:#fff}
+footer .acknowledgement{flex-basis:100%;max-width:80ch;padding-top:14px;border-top:1px solid #3a3e85}
+
+/* ===== Jobs page: Aboriginal and Torres Strait Islander statement ===== */
+.inclusion ul{margin:12px 0 18px 22px;display:grid;gap:8px}
+.inclusion h3{margin-top:22px}
+
+/* ===== About page: member numbers and quotes (moved from the page) ===== */
+.roles{counter-reset:member}
+.roles .role::before{counter-increment:member;content:"0" counter(member);font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:.9;letter-spacing:-.02em;margin-bottom:auto;padding-bottom:28px}
+.roles .role dd.quote{padding-top:12px;font-weight:700}
+.role .quote .translation{display:block;font-weight:400;font-style:italic}
+
+/* ===== About page: styled student IDs (hex colours, hover effect) ===== */
+.info ul.ids{list-style:none;margin:10px 0 0;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.info ul.ids li{background:#ffd23f;color:#14163a;border:2px solid #14163a;border-radius:12px;padding:8px 14px;font-family:"Courier New",Courier,monospace;font-weight:700;box-shadow:3px 3px 0 #14163a;transition:transform .2s,background .2s}
+.info ul.ids li:hover{background:#7be0c3;transform:translate(-2px,-2px)}
+
+/* ===== Tables: explicit hex colours and row hover ===== */
+.interests thead th{background:#ffd23f;color:#14163a}
+.interests tbody tr:hover th,.interests tbody tr:hover td:not([rowspan]){background:#ffe9a0;color:#14163a}

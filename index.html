@@ -8,15 +8,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="reelhouse-search.js" defer></script>
+<!-- Embedded CSS: rules used only on the home page -->
+<style>
+  .hero-img{display:block;max-width:100%;height:auto;margin-top:32px}
+</style>
 </head>
-<body>
+<body class="home">
 <input type="checkbox" id="dark" class="sr" aria-label="Dark mode">
 <div class="progress" aria-hidden="true"></div>
 
 <header>
   <div class="wrap">
     <nav>
-      <a class="logo" href="#">Reel House</a>
+      <a class="logo" href="index.html"><img src="logo.svg" alt="" width="32" height="32">Reel House</a>
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="#work">Work</a></li>
@@ -24,11 +29,11 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
       </ul>
       <div class="nav-right">
         <label class="toggle" for="dark" title="Switch dark mode"><span class="sr">Toggle dark mode</span></label>
-        <a class="btn" href="#contact">Book a free call</a>
+        <a class="btn" href="apply.html">Book a free call</a>
       </div>
     </nav>
   <form class="search" role="search" action="index.html">
@@ -43,9 +48,10 @@
         <h1>Content people finish watching.</h1>
         <p>We plan, shoot, edit and promote short video and social campaigns for brands in Vietnam and across Southeast Asia.</p>
         <div class="hero-actions">
-          <a class="btn" href="contact.html">Start a project</a>
+          <a class="btn" href="apply.html">Start a project</a>
           <a class="text" href="#work">See our work</a>
         </div>
+        <img class="hero-img" src="hero-reel.svg" alt="Illustration of a film reel and a clapperboard" width="320" height="180">
       </div>
       <div class="phone" aria-label="Example campaign result">
         <div class="bars"><i></i><i></i><i></i></div>
@@ -64,6 +70,7 @@
   </div>
 </div>
 
+<main>
 <section id="work">
   <div class="wrap">
     <h2>Recent work, told in stories</h2>
@@ -223,7 +230,7 @@
 <section class="services" id="services">
   <div class="wrap">
     <h2>What we make</h2>
-    <p class="lead">Pick one service or combine them. Open a row to see what is included.</p>
+    <p class="lead" style="max-width:60ch">Pick one service or combine them. Open a row to see what is included.</p>
     <div class="list">
       <details open>
         <summary>Short-form video</summary>
@@ -255,7 +262,7 @@
         <div class="price">$490<small>/month</small></div>
         <p>For small brands starting on one platform.</p>
         <ul><li>8 short videos</li><li>1 platform</li><li>Monthly report</li></ul>
-        <a class="btn" href="#contact">Choose Starter</a>
+        <a class="btn" href="apply.html">Choose Starter</a>
       </div>
       <div class="plan pop">
         <span class="badge">Most popular</span>
@@ -263,30 +270,64 @@
         <div class="price">$1,290<small>/month</small></div>
         <p>For brands ready to post every week.</p>
         <ul><li>20 short videos</li><li>3 platforms</li><li>Paid ads setup</li><li>Biweekly call</li></ul>
-        <a class="btn" href="#contact">Choose Growth</a>
+        <a class="btn" href="apply.html">Choose Growth</a>
       </div>
       <div class="plan">
         <h3>Studio</h3>
         <div class="price">$2,900<small>/month</small></div>
         <p>A full content team on your side.</p>
         <ul><li>40 videos and 1 shoot day</li><li>All platforms</li><li>Ads management</li><li>Weekly strategy call</li></ul>
-        <a class="btn" href="#contact">Choose Studio</a>
+        <a class="btn" href="apply.html">Choose Studio</a>
       </div>
     </div>
   </div>
 </section>
 
 
+<section id="compare" aria-labelledby="compare-title">
+  <div class="wrap">
+    <h2 id="compare-title">Compare the plans</h2>
+    <p class="lead">Everything in one table, so you can see what changes as you grow.</p>
+    <div class="table-wrap">
+      <table class="interests">
+        <caption>What each monthly plan includes</caption>
+        <thead>
+          <tr>
+            <th scope="col" rowspan="2">Feature</th>
+            <th scope="colgroup" colspan="3">Plan</th>
+          </tr>
+          <tr>
+            <th scope="col">Starter</th>
+            <th scope="col">Growth</th>
+            <th scope="col">Studio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Short videos per month</th><td>8</td><td>20</td><td>40</td></tr>
+          <tr><th scope="row">Platforms</th><td>1</td><td>3</td><td>All</td></tr>
+          <tr><th scope="row">Paid ads</th><td>Not included</td><td>Setup</td><td>Full management</td></tr>
+          <tr><th scope="row">Calls with our team</th><td>None</td><td>Biweekly</td><td>Weekly</td></tr>
+          <tr><th scope="row">Monthly report</th><td colspan="3">Included in every plan</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+</main>
+
 <footer>
   <div class="wrap">
     <p>COS10011/COS60004/COS60007 CWA</p>
     <p>&#169; Swinburne University of Technology</p>
-    <p>Group Lap - Task 1</p>
-    <p>https://github.com/Eruth1/The-axis-project</p>
+    <p>Group Lab - Task 1</p>
+    <p><a href="https://fpt-team-fs21t2lm.atlassian.net/jira/software/projects/KAN/boards/2?filter=assignee+IN+%28712020%3A8138a904-4e81-4305-8f6c-59876287f2d6%2C+empty%2C+currentUser%28%29%29&groupBy=none&atlOrigin=eyJpIjoiZDRjYTA2Y2QwYzY1NGU5Mjg5ZDY5NmFkNWRmYzI2MTQiLCJwIjoiaiJ9">Jira project board</a></p>
+    <p><a href="https://github.com/Eruth1/The-axis-project" target="_blank" rel="noopener">https://github.com/Eruth1/The-axis-project</a></p>
+    <p><a href="mailto:thanhntfsc0262@fpt.edu.vn"></a></p>
+    <p class="acknowledgement">We acknowledge the Traditional Custodians of the lands on which Swinburne University of Technology operates, the Wurundjeri Woi-wurrung people of the Kulin Nation, and pay our respects to Elders past and present. <a href="jobs.html#inclusion">Read our commitment to Aboriginal and Torres Strait Islander peoples</a>.</p>
   </div>
 </footer>
 
-<a class="btn sticky-cta" href="#contact">Book a free call</a>
+<a class="btn sticky-cta" href="apply.html">Book a free call</a>
 
 </body>
 </html>
