@@ -5,7 +5,6 @@ USE `axis_project`;
 
 DROP TABLE IF EXISTS `about`;
 CREATE TABLE `about` (
-  `member_id`               INT UNSIGNED     NOT NULL AUTO_INCREMENT,
   `student_id`              VARCHAR(10)      NOT NULL,
   `full_name`               VARCHAR(60)      NOT NULL,
   `email`                   VARCHAR(100)     NOT NULL,
@@ -17,9 +16,7 @@ CREATE TABLE `about` (
   `part2_contribution`      VARCHAR(500)     NOT NULL,
   `quote_vi`                VARCHAR(255)     NOT NULL,
   `quote_en`                VARCHAR(255)     NOT NULL,
-  `display_order`           TINYINT UNSIGNED NOT NULL DEFAULT 1,
-  PRIMARY KEY (`member_id`),
-  UNIQUE KEY `uq_about_student` (`student_id`)
+  PRIMARY KEY (`student_id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `about`
