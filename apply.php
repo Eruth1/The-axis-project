@@ -9,7 +9,6 @@
 <style>
   legend small{font-weight:400;color:var(--muted)}
 </style>
-<script src="reelhouse-search.js" defer></script>
 </head>
 <body>
 <input type="checkbox" id="dark" class="sr" aria-label="Dark mode">
@@ -56,40 +55,31 @@
         <h2>Apply to join the team</h2>
         <p class="lead" style="color:#e6f2ec">Use the job reference number from the Jobs page and fill in every required field.</p>
       </div>
-      <form id="apply-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+      <form id="apply-form" action="process_eoi.php" method="post" novalidate>
 
       <p>
         <label for="jobref">Job reference number</label>
-        <input type="text" id="jobref" name="jobref"
-               maxlength="5" pattern="[A-Za-z0-9]{5}"
-               title="Exactly 5 alphanumeric characters" required>
+        <input type="text" id="jobref" name="jobref">
       </p>
 
       <p>
         <label for="firstname">First name</label>
-        <input type="text" id="firstname" name="firstname"
-               maxlength="20" pattern="[A-Za-z]{1,20}"
-               title="Maximum 20 alpha characters (letters only)" required>
+        <input type="text" id="firstname" name="firstname">
       </p>
 
       <p>
         <label for="lastname">Last name</label>
-        <input type="text" id="lastname" name="lastname"
-               maxlength="20" pattern="[A-Za-z]{1,20}"
-               title="Maximum 20 alpha characters (letters only)" required>
+        <input type="text" id="lastname" name="lastname">
       </p>
 
       <p>
         <label for="dob">Date of birth</label>
-        <input type="text" id="dob" name="dob"
-               placeholder="dd/mm/yyyy" maxlength="10"
-               pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19|20)[0-9]{2}"
-               title="Use the format dd/mm/yyyy" required>
+        <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy">
       </p>
 
       <fieldset>
         <legend>Gender</legend>
-        <input type="radio" id="female" name="gender" value="female" required>
+        <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label>
 
         <input type="radio" id="male" name="gender" value="male">
@@ -101,17 +91,17 @@
 
       <p>
         <label for="street">Street address</label>
-        <input type="text" id="street" name="street" maxlength="40" required>
+        <input type="text" id="street" name="street">
       </p>
 
       <p>
         <label for="suburb">Suburb/Town</label>
-        <input type="text" id="suburb" name="suburb" maxlength="40" required>
+        <input type="text" id="suburb" name="suburb">
       </p>
 
       <p>
         <label for="state">State</label>
-        <select id="state" name="state" required>
+        <select id="state" name="state">
           <option value="">Please select</option>
           <option value="VIC">VIC</option>
           <option value="NSW">NSW</option>
@@ -125,21 +115,17 @@
       </p>
       <p>
         <label for="postcode">Postcode</label>
-        <input type="text" id="postcode" name="postcode"
-               maxlength="4" pattern="[0-9]{4}" inputmode="numeric"
-               title="Exactly 4 digits" required>
+        <input type="text" id="postcode" name="postcode">
       </p>
 
       <p>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="text" id="email" name="email">
       </p>
 
       <p>
         <label for="phone">Phone number</label>
-        <input type="tel" id="phone" name="phone"
-               maxlength="12" pattern="[0-9]{8,12}"
-               title="8 to 12 digits" required>
+        <input type="text" id="phone" name="phone">
       </p>
 
       <fieldset>
@@ -178,23 +164,10 @@
     <p>Group Lab - Task 1</p>
     <p><a href="https://axis-project.atlassian.net/jira/software/projects/AXIS/boards/1" target="_blank" rel="noopener">Jira project board</a></p>
     <p><a href="https://github.com/Eruth1/The-axis-project" target="_blank" rel="noopener">https://github.com/Eruth1/The-axis-project</a></p>
-    <p><a href="thanhntfsc0262@fpt.edu.vn">thanhntfsc0262@fpt.edu.vn</a></p>
+    <p><a href="mailto:thanhntfsc0262@fpt.edu.vn">thanhntfsc0262@fpt.edu.vn</a></p>
     <p class="acknowledgement">We acknowledge the Traditional Custodians of the lands on which Swinburne University of Technology operates, the Wurundjeri Woi-wurrung people of the Kulin Nation, and pay our respects to Elders past and present. <a href="jobs.html#inclusion">Read our commitment to Aboriginal and Torres Strait Islander peoples</a>.</p>
   </div>
 </footer>
-
-<script>
-/* Require at least one skill: HTML cannot do this for a checkbox group on its own. */
-(function () {
-  var boxes = document.querySelectorAll('input[name="skills[]"]');
-  function check() {
-    var any = Array.prototype.some.call(boxes, function (b) { return b.checked; });
-    boxes[0].setCustomValidity(any ? "" : "Please choose at least one skill.");
-  }
-  Array.prototype.forEach.call(boxes, function (b) { b.addEventListener("change", check); });
-  check();
-})();
-</script>
 
 </body>
 </html>
