@@ -1,15 +1,11 @@
 <?php
-// process_eoi.php
-// Receives the application form from apply.php, validates it on the server,
-// and saves it into the eoi table. Shows the new EOInumber on success.
 
-// 1. Block direct access: only accept a POST that came from the form
 if ($_SERVER["REQUEST_METHOD"] !== "POST" || !isset($_POST["jobref"])) {
     header("Location: apply.php");
     exit();
 }
 
-// 2. Sanitise: remove spaces, backslashes and HTML special characters
+
 function sanitise_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -17,7 +13,7 @@ function sanitise_input($data) {
     return $data;
 }
 
-// Read a text field safely (missing field becomes an empty string)
+
 function get_field($name) {
     return isset($_POST[$name]) ? sanitise_input($_POST[$name]) : "";
 }
@@ -35,7 +31,7 @@ $email       = get_field("email");
 $phone       = get_field("phone");
 $otherskills = get_field("otherskills");
 
-// Checkboxes arrive as an array (skills[]), or not at all if none ticked
+
 $skills = [];
 if (isset($_POST["skills"]) && is_array($_POST["skills"])) {
     foreach ($_POST["skills"] as $skill) {
@@ -43,7 +39,7 @@ if (isset($_POST["skills"]) && is_array($_POST["skills"])) {
     }
 }
 
-// 3. Validate every field and collect the error messages
+
 $errors = [];
 
 if ($jobref === "") {
@@ -64,7 +60,7 @@ if ($lastname === "") {
     $errors[] = "Last name must be letters only, maximum 20 characters.";
 }
 
-// Date of birth: format dd/mm/yyyy, a real date, and not in the future
+
 $dob_for_db = "";
 if ($dob === "") {
     $errors[] = "Date of birth is required.";
@@ -77,7 +73,7 @@ if ($dob === "") {
     if (!checkdate($month, $day, $year)) {
         $errors[] = "Date of birth is not a real date.";
     } else {
-        $dob_for_db = sprintf("%04d-%02d-%02d", $year, $month, $day); // MySQL DATE format
+        $dob_for_db = sprintf("%04d-%02d-%02d", $year, $month, $day); 
         if ($dob_for_db > date("Y-m-d")) {
             $errors[] = "Date of birth cannot be in the future.";
         }
@@ -135,13 +131,12 @@ foreach ($skills as $skill) {
     }
 }
 
-// Each skill becomes 1 (ticked) or 0 (not ticked) for its own column
 $skill_html = in_array("HTML", $skills, true) ? 1 : 0;
 $skill_css  = in_array("CSS", $skills, true) ? 1 : 0;
 $skill_js   = in_array("JavaScript", $skills, true) ? 1 : 0;
 $skill_sql  = in_array("SQL", $skills, true) ? 1 : 0;
 
-// 4. Save to the database only if there are no errors
+
 $eoi_number = null;
 $db_error   = false;
 
@@ -151,7 +146,7 @@ if (count($errors) === 0) {
     try {
         $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
-        // Create the eoi table if it does not exist yet
+    
         $create_table = "CREATE TABLE IF NOT EXISTS eoi (
             EOInumber    INT AUTO_INCREMENT PRIMARY KEY,
             job_ref      CHAR(5)      NOT NULL,
@@ -174,8 +169,7 @@ if (count($errors) === 0) {
         )";
         mysqli_query($conn, $create_table);
 
-        // Prepared statement: the values are sent separately from the SQL,
-        // so user input can never change the query (prevents SQL injection)
+        
         $insert = "INSERT INTO eoi (job_ref, first_name, last_name, dob, gender,
                        street, suburb, state, postcode, email, phone,
                        skill_html, skill_css, skill_js, skill_sql, other_skills)
@@ -187,7 +181,7 @@ if (count($errors) === 0) {
             $skill_html, $skill_css, $skill_js, $skill_sql, $otherskills);
         mysqli_stmt_execute($stmt);
 
-        // The auto-generated EOInumber of the row just inserted
+       
         $eoi_number = mysqli_insert_id($conn);
 
         mysqli_stmt_close($stmt);
