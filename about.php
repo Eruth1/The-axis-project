@@ -12,7 +12,7 @@ $conn    = @mysqli_connect($host, $user, $pwd, $sql_db);
 
 if ($conn) {
     mysqli_set_charset($conn, "utf8mb4");
-    $stmt = mysqli_prepare($conn, "SELECT * FROM about ORDER BY display_order, member_id");
+    $stmt = mysqli_prepare($conn, "SELECT * FROM about ORDER BY student_id");
     if ($stmt && mysqli_stmt_execute($stmt)) {
         $members = mysqli_fetch_all(mysqli_stmt_get_result($stmt), MYSQLI_ASSOC);
     }
