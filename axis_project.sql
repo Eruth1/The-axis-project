@@ -42,3 +42,25 @@ VALUES
  'EOI table, apply.php posting to process_eoi.php, server-side validation and sanitising, the EOI number confirmation and the test EOI records.',
  'Thất bại là mẹ thành công.',
  'Failure is the mother of success.');
+
+DROP TABLE IF EXISTS `eoi`;
+CREATE TABLE `eoi` (
+  `EOInumber`    INT AUTO_INCREMENT PRIMARY KEY,
+  `job_ref`      CHAR(5)      NOT NULL,
+  `first_name`   VARCHAR(20)  NOT NULL,
+  `last_name`    VARCHAR(20)  NOT NULL,
+  `dob`          DATE         NOT NULL,
+  `gender`       VARCHAR(10)  NOT NULL,
+  `street`       VARCHAR(40)  NOT NULL,
+  `suburb`       VARCHAR(40)  NOT NULL,
+  `state`        VARCHAR(3)   NOT NULL,
+  `postcode`     CHAR(4)      NOT NULL,
+  `email`        VARCHAR(100) NOT NULL,
+  `phone`        VARCHAR(12)  NOT NULL,
+  `skill_html`   TINYINT(1)   NOT NULL DEFAULT 0,
+  `skill_css`    TINYINT(1)   NOT NULL DEFAULT 0,
+  `skill_js`     TINYINT(1)   NOT NULL DEFAULT 0,
+  `skill_sql`    TINYINT(1)   NOT NULL DEFAULT 0,
+  `other_skills` TEXT,
+  `status`       ENUM('New','Current','Final') NOT NULL DEFAULT 'New'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
